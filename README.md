@@ -1,4 +1,4 @@
-// ECOPLAY 3.0 client (online) - bilingual PT/EN, mixed gameplay, badges and confetti, server save
+// ECOPLAY 3.0 client (online) -  PT, mixed gameplay, badges and confetti, server save
 const API = {
   saveSession: (entry)=> fetch('/api/session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(entry)}),
   getSessions: (auth)=> fetch('/api/sessions',{headers:{'Authorization':auth}}),
