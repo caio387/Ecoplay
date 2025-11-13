@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ECOPLAY 3.0 - Aprenda jogando. Invista brincando.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">ECOPLAY</div>
+    <div class="lang">
+      <button id="langBtn">EN</button>
+    </div>
+  </div>
+
+  <main>
+    <section id="hero" class="card">
+      <h1 id="slogan">Aprenda jogando. Invista brincando.</h1>
+      <div class="entry">
+        <button id="playBtn" class="primary">Jogar Agora / Play Now</button>
+        <button id="profBtn" class="ghost">Professor / Teacher</button>
+      </div>
+    </section>
+
+    <!-- Login student -->
+    <section id="studentLogin" class="card hidden">
+      <h2 data-i18n="student_title">Entrar como Aluno</h2>
+      <label>Nome / Name</label><input id="studentName" placeholder="Ex: Caio" />
+      <label>Turma / Class</label><input id="studentClass" placeholder="Ex: 5A" />
+      <div class="row">
+        <button id="studentEnter" class="primary">Entrar / Enter</button>
+        <button id="studentBack" class="ghost">Voltar / Back</button>
+      </div>
+    </section>
+
+    <!-- Login professor -->
+    <section id="profLogin" class="card hidden">
+      <h2>Professor / Teacher</h2>
+      <label>Usuário / Username</label><input id="profUser" placeholder="ex: caio" />
+      <label>Senha / Password</label><input id="profPass" type="password" placeholder="password" />
+      <div class="row">
+        <button id="profEnter" class="primary">Entrar / Enter</button>
+        <button id="profBack" class="ghost">Voltar / Back</button>
+      </div>
+      <p class="hint">Professor login: caio / caio12345</p>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="card hidden">
+      <div class="welcome">Olá, <span id="whoName"></span> <small>(<span id="whoClass"></span>)</small></div>
+      <h2>Escolha um jogo / Choose a game</h2>
+      <div class="buttons">
+        <button class="game-btn" data-game="saveSpend">Poupar vs Gastar</button>
+        <button class="game-btn" data-game="invest">Investimento Simples</button>
+        <button id="logoutBtn" class="ghost">Sair / Logout</button>
+      </div>
+      <div id="badgesRow" class="badges"></div>
+    </section>
+
+    <!-- Game Area -->
+    <section id="gameArea" class="card hidden">
+      <div id="gameHeader">
+        <button id="backBtn">⬅ Voltar</button>
+        <h2 id="gameTitle"></h2>
+        <div id="scoreDisplay">Pontuação: <span id="score">0</span></div>
+      </div>
+      <div id="gameContent"></div>
+    </section>
+
+    <!-- Professor Dashboard (separate page route) -->
+    <section id="profArea" class="card hidden">
+      <h2>Painel do Professor</h2>
+      <div id="profControls" class="row">
+        <button id="refreshBtn" class="primary">Atualizar / Refresh</button>
+        <button id="exportBtn" class="ghost">Export CSV</button>
+        <button id="clearBtn" class="ghost">Limpar dados / Clear</button>
+      </div>
+      <div id="report"></div>
+      <button id="profLogout" class="ghost">Sair / Logout</button>
+    </section>
+  </main>
+
+  <!-- Confetti canvas & popup -->
+  <canvas id="confettiCanvas" class="hidden"></canvas>
+  <div id="badgePopup" class="hidden"></div>
+
+  <footer><small>ECOPLAY 3.0 — Aprendizagem & Jogos</small></footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
